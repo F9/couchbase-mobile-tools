@@ -51,8 +51,8 @@ void CBLiteTool::catDocs() {
     }
     openDatabaseFromNextArg();
 
-    bool includeIDs = (argCount() > 1);
-    while (argCount() > 0) {
+    bool includeIDs = true;
+    while (hasArgs()) {
         string docID = nextArg("document ID");
         if (isGlobPattern(docID)) {
             _enumFlags |= kC4IncludeBodies; // force displaying doc bodies
